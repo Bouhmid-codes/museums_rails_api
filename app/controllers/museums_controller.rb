@@ -7,7 +7,7 @@ class MuseumsController < ApplicationController
 
     # Loop through the museums and store them in the hash
     response['features'].each do |museum|
-      post_code = museum['context'][0]['text']
+      post_code = find_post_code(museum['context'])
       museums[post_code] ||= []
       museums[post_code] << museum['text']
     end
@@ -26,5 +26,10 @@ class MuseumsController < ApplicationController
     response = RestClient.get(url)
     # returns a parse response
     JSON.parse(response)
+  end
+
+  def find_post_code(context)
+    # Find the postcode in the context array
+    context.select { |item| item['id'].include?('postcode') }.first['text']
   end
 end
