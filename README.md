@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails API that takes Longitude and Latitude coordinates as params and renders a json of the museums that are around that point with the post code as key and an array of museum names as value.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Example: for '/museums?lat=52.51429960887627&lng=13.39418957848918' you would get the following:
+![image](https://github.com/user-attachments/assets/ca204db5-e616-4d9e-a2cc-76ef7fdbda8e)
